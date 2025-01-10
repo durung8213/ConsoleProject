@@ -127,29 +127,41 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="BattleManager.cpp" />
     <ClCompile Include="BSPNode.cpp" />
     <ClCompile Include="Character.cpp" />
+    <ClCompile Include="DoubleBuffer.cpp">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClCompile>
     <ClCompile Include="GameManager.cpp" />
     <ClCompile Include="Inventory.cpp" />
     <ClCompile Include="Item.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="Map.cpp" />
+    <ClCompile Include="MapController.cpp" />
     <ClCompile Include="MapGenerator.cpp" />
     <ClCompile Include="Monster.cpp" />
     <ClCompile Include="MoveController.cpp" />
     <ClCompile Include="Player.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Shop.cpp" />
+    <ClCompile Include="ShopGenerator.cpp" />
     <ClCompile Include="SoundController.cpp" />
+    <ClCompile Include="StartScene.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BattleManager.h" />
     <ClInclude Include="BSPNode.h" />
     <ClInclude Include="Character.h" />
+    <ClInclude Include="DoubleBuffer.h">
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">true</ExcludedFromBuild>
+    </ClInclude>
     <ClInclude Include="GameEnums.h" />
     <ClInclude Include="GameManager.h" />
     <ClInclude Include="Inventory.h" />
     <ClInclude Include="Item.h" />
     <ClInclude Include="Map.h" />
+    <ClInclude Include="MapController.h" />
     <ClInclude Include="MapGenerator.h" />
     <ClInclude Include="Monster.h" />
     <ClInclude Include="MoveController.h" />
@@ -157,13 +169,18 @@
     <ClInclude Include="resource.h" />
     <ClInclude Include="SceneManager.h" />
     <ClInclude Include="Shop.h" />
+    <ClInclude Include="ShopGenerator.h" />
     <ClInclude Include="SoundController.h" />
+    <ClInclude Include="StartScene.h" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="ConsoleProject.rc" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="test_bitmap.bmp" />
+    <Image Include="battle.bmp" />
+    <Image Include="battle2.bmp" />
+    <Image Include="bitmap1.bmp" />
+    <Image Include="Title.bmp" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
