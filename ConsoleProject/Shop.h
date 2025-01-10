@@ -2,24 +2,31 @@
 #include<vector>
 #include"Item.h"
 
+
 using namespace GameEnums;
+
+class Player;
 
 class Shop
 {
-private:
-	vector<Item>items;
+public:
 	vector<Item> buyingItem;
+private:
+	vector<Item> items;
+	vector<int> showList;
 
 public:
 	Shop();
 	~Shop();
 
-	void SetItem();
-	void DisplayItems(ItemType type)const;
-	void DisplayBuyItems(ItemType type)const;
-	Item* BuyItem(ItemType type, const int index, int& price);
+	void SetItems();
+	void DisplayItems(ItemType type);
+	void DisplayBuyItems();
+	Item* BuyItem(ItemType type, const int index, const int gill);
 	void AddItem(const Item& item);
+	void SetCount(const int index, const int count);
 
-	void ReSellItem(const int index, int& price);
+	void ReSellItem(const int index, Player& player);
+
 };
 

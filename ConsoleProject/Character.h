@@ -3,6 +3,9 @@
 #include<vector>
 #include "GameEnums.h"
 #include "Inventory.h"
+#include <map>
+
+
 using namespace std;
 using namespace GameEnums;
 class Character
@@ -11,32 +14,28 @@ protected:
 	string m_name;
 	Job m_job;
 	Inventory m_inventory;
-	Skill m_skill;
-	int m_money;
+	map<string, int> m_Skill;
 
-	int m_HP;
-	int m_MP;
-	int m_ATK;
-	int m_DEF;
-	int m_CRT;
+	int m_HP=0;
+	int m_MP=0;
+	int m_ATK=0;
+	int m_DEF=0;
+	double m_CRT=0;
 public:
-	string GetName() { return m_name; }
-	Job GetJob() { return m_job; }
+	string GetName() { return this->m_name; }
+	Job GetJob() { return this->m_job; }
 
-	int GetMoney(){ return m_money; }
-	int GetHP() { return m_HP; }
-	int GetMP() { return m_MP; }
-	int GetATK() { return m_ATK; }
-	int GetDEF() { return m_DEF; }
-	int GetCRT() { return m_CRT; }
-	
+	int GetHP() { return this->m_HP; }
+	int GetMP() { return this->m_MP; }
+	int GetATK() { return this->m_ATK; }
+	int GetDEF() { return this->m_DEF; }
+	double GetCRT() { return this->m_CRT; }
+	map<string, int>& GetSkill() { return m_Skill; }
 
-	void SetMoney(int money) { this->m_money = money; }
 	void SetHP(int hp) { this->m_HP = hp; }
 	void SetMP(int mp) { this->m_MP = mp; }
 	void SetATK(int atk) { this->m_ATK = atk; }
 	void SetDEF(int def) { this->m_DEF = def; }
-
-
+	void SetName(const string& name) { this->m_name = name; }
 };
 

@@ -1,10 +1,15 @@
+#define _CRT_SECURE_NO_WARNINGS
 #pragma once
 #include<iostream>
 #include<Windows.h>
+#include "DoubleBuffer.h"
+using namespace std;
 
 class Map
 {
 public:
+	Map() {}
+
 	void PrintGrass();
 	void PrintWall();
 	void PrintRoad();
@@ -12,6 +17,8 @@ public:
 	void PrintShop();
 	void PrintPlayer();
 public:
-	Map() {}
+	//string mapDraw = "";
+private:
+	void textcolor(int foreground, int background);
 };
 

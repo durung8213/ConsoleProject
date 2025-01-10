@@ -16,7 +16,9 @@ namespace GameEnums
 	{
 		LOCATION_SHOP = 1,
 		LOCATION_MAP,
-		LOCATION_INVENTORY
+		LOCATION_INVENTORY,
+		LOCATION_SELL_INVENTORY,
+		LOCATION_RESELL_SHOP
 	};
 
 	enum class Job
@@ -28,10 +30,10 @@ namespace GameEnums
 
 	enum class Skill
 	{
-		SWING,
-		CURE,
-		FIRE,
-		THORNS
+		SWING = 40,
+		CURE = 30,
+		FIRE = 40,
+		THORNS = 25
 	};
 
 	enum class Effect
@@ -42,4 +44,5 @@ namespace GameEnums
 		HP,
 		MP
 	};
+
 }

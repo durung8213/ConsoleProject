@@ -1,27 +1,36 @@
 #pragma once
 #include "Character.h"
-#include<iostream>
+#include <iostream>
+#include <vector>
 
-
-
-#define PLAYER_SIZE 3;
+class Monster;
 
 class Player : public Character
 {
 public:
+	Inventory m_Inven;
+
+	Player(const string& name, const Job job, const string& sk1, const string& sk2, const int hp,
+		const int mp, const int atk, const int def, const double crt);
+	~Player(){}
+
+	Item SellItem(const int itemNum);
+	void EquipItem(const int num);
+	void EquipOffItem(const int num);
+
+	void AddItemToInventory(const Item& item);
+
+	void ShowInventory()const;
+	void ShowStatus();
+	void ShowEquip()const;
+
+	void Attack(Monster* m);
+	bool Skill(Monster* m, const string& sk);
+	void UseItem();
+
+
 
 private:
-	string m_name = "BlackMage";
-	Job m_job = Job::BLACKMAGE;
-	Inventory m_inventory;
-	Skill m_skill = Skill::FIRE;
-	int m_money = 10000;
-
-	int m_HP = 100;
-	int m_MP = 100;
-	int m_ATK = 30;
-	int m_DEF = 40;
-	double m_CRT = 0.7;
 
 	bool m_Death = false;
 	int LBPoint = 0;

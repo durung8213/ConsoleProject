@@ -13,13 +13,16 @@ public:
 	Item() {}
 	Item(ItemType type, const string& name, const string& description, Effect effect,
 		int effectPoint, int price, int count);
-	string GetName();
-	string GetDesc();
-	ItemType GetType();
-	int GetPrice();
-	int GetCount();
-	int GetEffPoint();
+
+	string GetName() const;
+	string GetDesc() const;
+	ItemType GetType() const;
+	Effect GetEffect() const;
+	int GetPrice() const;
+	int GetCount() const;
+	int GetEffPoint() const;
 	void SetCount(int count);
+
 private:
 	string m_name;
 	string m_desc;

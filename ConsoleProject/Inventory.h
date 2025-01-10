@@ -4,29 +4,37 @@
 
 using namespace std;
 
+class Player;
+
 class Inventory
 {
 private:
-	vector<Item> items;
+	vector<Item> invenItems;
 	Item equipArmor;
 	Item equipWeapon;
 	Item equipRing;
 
+	int mGill;
 
 public:
 	Inventory();
 	~Inventory();
 
+	Player* player;
+
 	void ShowInventory()const;
+	void ShowEquip()const;
+
 	void AddItem(const Item& item);
-	Item SellItem(const int index, int& price);
+	Item SellItem(const int index);
+	int GetItemSize();
 
-	void EquipItem(const int index);
-	void EquipOff(const Item& item);	//구현
-	Item GetEquippedArmor()const;
-	Item GetEquippedWeapon()const;
-	Item GetEquippedRing()const;
+	void EquipItem(const int index, Player* player);
+	void EquipOff(const int index, Player* player);	//구현
 
+	int GetGill() { return mGill; }
+	void SetGill(const int price) { mGill = price; }
 
+	void UseItem(const int index);
 };
 

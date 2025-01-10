@@ -162,7 +162,7 @@ void BSPNode::Connect(BSPNode* root)
 	//연결하려고 하는 방의 두 중심점의 x축이 같다면
 	if (LCenter.x == RCenter.x) 
 	{
-		//가로가 평행하기때문에 세로로 길을 만들어준다.
+		//x좌표가 동일하기 때문에 세로로 길을 만들어준다.
 		for (int i = LCenter.y; i < RCenter.y; i++)
 		{
 			//길을 이어준다.
@@ -172,7 +172,7 @@ void BSPNode::Connect(BSPNode* root)
 	//연결하려고 하는 방의 두 중심점의 y축이 같다면
 	else if (LCenter.y == RCenter.y)
 	{
-		//세로로 평행하기 때문에 가로로 길을 만들어준다.
+		//y좌표가 동일하기 때문에 가로로 길을 만들어준다.
 		for (int i = LCenter.x; i < RCenter.x; i++)
 		{
 			map[LCenter.y][i] = 2;

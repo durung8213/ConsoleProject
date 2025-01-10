@@ -12,8 +12,8 @@ using namespace std;
 #define minX 10
 #define minY 10
 
-const int mapSizeX = 40;
-const int mapSizeY = 50;
+const int mapSizeX = 44;
+const int mapSizeY = 44;
 
 
 struct Room
@@ -60,9 +60,9 @@ public:
 	void BSP();
 
 	Room* MakeRoom(BSPNode* bspNode);
-
 public:
 	int map[mapSizeY][mapSizeX];
+	bool IsBattle = false;
 private:
 	int _x, _y, _w, _h;
 
